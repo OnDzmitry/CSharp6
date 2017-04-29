@@ -14,7 +14,7 @@ namespace CSharp6
     public partial class CreatePlaneForm : Form
     {
         public CreatePlaneForm(Plane plane)
-        {
+        { 
             InitializeComponent();
         }
         public CreatePlaneForm(BindingList<Plane> planes)
