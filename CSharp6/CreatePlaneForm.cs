@@ -13,33 +13,24 @@ namespace CSharp6
     
     public partial class CreatePlaneForm : Form
     {
-        public CreatePlaneForm(Plane plane)
-        { 
-            InitializeComponent();
-        }
+        
         public CreatePlaneForm(BindingList<Plane> planes)
         {
             InitializeComponent();
-            _mode += AddPlane;
             _crewMembers = new BindingList<string>();
             _planesTypes = new BindingList<string>();
             crewMembersListBox.DataSource = _crewMembers;
             planeTypeListBox.DataSource = _planesTypes;
             _planesList = planes;
         }
-        private void label1_Click(object sender, EventArgs e)
+        private void _planesList_ListChanged(object sender, ListChangedEventArgs e)
         {
-
-        }
-
-        private void CreatePlaneForm_Load(object sender, EventArgs e)
-        {
-
+            throw new NotImplementedException();
         }
        
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            textBoxSeatsCount.Text = Convert.ToString( (sender as TrackBar).Value);
+            seatsCountTextBox.Text = Convert.ToString( (sender as TrackBar).Value);
         }
        
        
@@ -57,7 +48,7 @@ namespace CSharp6
 
         private void checkBoxAllowCreator_CheckedChanged(object sender, EventArgs e)
         {
-            if ( checkBoxAllowCreator.Checked == true )
+            if ( allowCreatorCheckBox.Checked == true )
             {
                 panel1.Visible = true;
             }
@@ -66,11 +57,6 @@ namespace CSharp6
                 panel1.Visible = false;
             }
         }
-        private BindingList<Plane> _planesList;
-        private BindingList<String> _crewMembers;
-        private BindingList<String> _planesTypes;
-        private delegate void Mode();
-        private event Mode _mode;
         private void onlyDigitsPress (object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
@@ -80,52 +66,33 @@ namespace CSharp6
         {
             capacityTextBox.Text = Convert.ToString((sender as TrackBar).Value);
         }
-
-        private void textBoxCrewMembers_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                _crewMembers.Add(crewMembersTextBox.Text);
-                crewMembersTextBox.Clear();
-            }
-        }
-
-        private void planeTypesTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                _planesTypes.Add(planeTypesTextBox.Text);
-                planeTypesTextBox.Clear();
-            }
-
-        }
-        private void AddPlane()
+        private void addButton_Click(object sender, EventArgs e)
         {
             AirPlaneCreator creator = null;
-            if (checkBoxAllowCreator.Checked)
+            if (allowCreatorCheckBox.Checked)
             {
                 creator = new AirPlaneCreator
                 {
-                    Name = textBoxCreatorName.Text,
-                    Country = textBoxCreatorCountry.Text,
+                    Name = creatorNameTextBox.Text,
+                    Country = creatorCountryTextBox.Text,
                     AirPlanesTypes = _planesTypes.ToList(),
-                    FoundationYear = Convert.ToInt32(textBoxCreatorFoundationYear.Text)
+                    FoundationYear = Convert.ToInt32(creatorFoundationYearTextBox.Text)
                 };
             }
-            if (radioButtonPassengerPlane.Checked)
+            if (passengerPlaneRadioButton.Checked)
             {
                 PassengerPlane newPasPlane = new PassengerPlane
                 {
                     Number = Convert.ToInt32(numberTextBox.Text),
                     Mark = markTextBox.Text,
-                    AirlineName = textBoxAirlineName.Text,
+                    AirlineName = airlineNameTextBox.Text,
                     Creator = creator,
                     ReleaseYear = Convert.ToInt32(releaseYearTextBox.Text),
-                    SeatsCount = Convert.ToInt32(textBoxSeatsCount.Text)
+                    SeatsCount = Convert.ToInt32(seatsCountTextBox.Text)
                 };
                 _planesList.Add(newPasPlane);
             }
-            if (radioButtonMilitaryPlane.Checked)
+            if (militaryPlaneRadioButton.Checked)
             {
                 MilitaryPlane newMilPlane = new MilitaryPlane
                 {
@@ -140,9 +107,25 @@ namespace CSharp6
             }
             this.Close();
         }
-        private void addButton_Click(object sender, EventArgs e)
+
+        private void addToList_KeyDown(object sender, KeyEventArgs e)
         {
-            _mode();
+            if (e.KeyCode == Keys.Enter)
+            {
+                if ((sender as TextBox).Name == "crewMembersTextBox")
+                {
+                    _crewMembers.Add(crewMembersTextBox.Text);
+                    crewMembersTextBox.Clear();
+                }
+                if ((sender as TextBox).Name== "planeTypesTextBox")
+                {
+                    _planesTypes.Add(planeTypesTextBox.Text);
+                    planeTypesTextBox.Clear();
+                }
+            }
         }
+        private BindingList<Plane> _planesList;
+        private BindingList<String> _crewMembers;
+        private BindingList<String> _planesTypes;
     }
 }

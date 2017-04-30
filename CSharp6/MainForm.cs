@@ -33,6 +33,10 @@ namespace CSharp6
             CreatePlaneForm newPlane = new CreatePlaneForm(_planeList);
             newPlane.Show();
         }
+        public void RefreshList()
+        {
+            _planeList.ResetBindings();
+        }
         private BindingList<Plane> _planeList;
         private int _index = -1;
         private void listAirPlane_MouseDown(object sender, MouseEventArgs e)
@@ -49,16 +53,6 @@ namespace CSharp6
             }
         }
 
-        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-           
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ViewAirPlaneForm newView = new ViewAirPlaneForm(_planeList[_index]);
@@ -67,8 +61,13 @@ namespace CSharp6
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreatePlaneForm newEditPlane = new CreatePlaneForm(_planeList[_index]);
-            newEditPlane.Show();
+            EditForm newEdit = new EditForm(_planeList[_index]);
+            newEdit.Owner = this;
+            newEdit.ShowDialog();
+        }
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _planeList.RemoveAt(_index);
         }
     }
 }
