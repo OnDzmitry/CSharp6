@@ -23,11 +23,11 @@ namespace CSharp6
         {
             if (allowCreatorCheckBox.Checked == true)
             {
-                panel1.Visible = true;
+                creatorPanel.Visible = true;
             }
             else
             {
-                panel1.Visible = false;
+                creatorPanel.Visible = false;
             }
         }
         private void seatsCountTrackBar_Scroll(object sender, EventArgs e)
@@ -51,21 +51,21 @@ namespace CSharp6
             if (plane is PassengerPlane)
             {
                 PassengerPlane passPlane = plane as PassengerPlane;
-                panelPassenger.Visible = true;
+                passengerPanel.Visible = true;
                 textBoxAirlineName.Text = passPlane.AirlineName;
                 textBoxSeatsCount.Text = passPlane.SeatsCount.ToString();
             }
             if (plane is MilitaryPlane)
             {
                 MilitaryPlane millPlane = plane as MilitaryPlane;
-                capacityPanel.Visible = true;
+                militaryPanel.Visible = true;
                 _crewMembers = new BindingList<string>(millPlane.CrewMembers);
                 crewMembersListBox.DataSource = _crewMembers;
                 capacityTextBox.Text = millPlane.Capacity.ToString() ;
             }
             if (plane.Creator!=null)
             {
-                panel1.Visible = true;
+                creatorPanel.Visible = true;
                 allowCreatorCheckBox.Checked = true;
                 creatorNameTextBox.Text = plane.Creator.Name;
                 creatorCountryTextBox.Text = plane.Creator.Country;

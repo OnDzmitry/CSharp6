@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace CSharp6.Models
 {
+    [Serializable]
     abstract public class Plane
     {
         #region Consructors

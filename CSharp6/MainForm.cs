@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CSharp6.Models;
+using System.IO;
+using CSharp6.XmlHandl;
+using System.Xml.Serialization;
 namespace CSharp6
 {
     public partial class MainForm : Form
@@ -16,11 +19,13 @@ namespace CSharp6
         {
             InitializeComponent();
             _planeList = new BindingList<Plane>();
-            PassengerPlane pl = new PassengerPlane { Number = 1, Mark = "Boing", Creator = null, AirlineName = "united", SeatsCount = 250, ReleaseYear = 2010 };
-            PassengerPlane pl1 = new PassengerPlane { Number = 1, Mark = "Boing", Creator = null, AirlineName = "united", SeatsCount = 250, ReleaseYear = 2010 };
+            PassengerPlane pl = new PassengerPlane { Number = 1,  Mark = "Boing", Creator = null, AirlineName = "united", SeatsCount = 250, ReleaseYear = 2010 };
+            PassengerPlane pl1 = new PassengerPlane { Number = 3, Mark = "aBoing", Creator = null, AirlineName = "united", SeatsCount = 250, ReleaseYear = 2010 };
+            PassengerPlane pl2 = new PassengerPlane { Number = 4, Mark = "abBoing", Creator = null, AirlineName = "united", SeatsCount = 250, ReleaseYear = 2010 };
             listAirPlane.DataSource = _planeList;
             _planeList.Add(pl);
             _planeList.Add(pl1);
+            _planeList.Add(pl2);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,7 +42,7 @@ namespace CSharp6
         {
             _planeList.ResetBindings();
         }
-        private BindingList<Plane> _planeList;
+        private BindingList<Plane> _planeList { set; get; }
         private int _index = -1;
         private void listAirPlane_MouseDown(object sender, MouseEventArgs e)
         {
@@ -68,6 +73,19 @@ namespace CSharp6
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _planeList.RemoveAt(_index);
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var resultDes = XmlSerializeWrapper.Deserialize<Plane[]>("save.xml");
+            foreach (var i in resultDes)
+            {
+                _planeList.Add(i);
+            }
+        }
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            XmlSerializeWrapper.Serialize(_planeList, "save.xml");
         }
     }
 }

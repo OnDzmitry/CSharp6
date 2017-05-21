@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.capacityPanel = new System.Windows.Forms.Panel();
+            this.militaryPanel = new System.Windows.Forms.Panel();
             this.crewMembersListBox = new System.Windows.Forms.ListBox();
             this.crewMembersLabel = new System.Windows.Forms.Label();
             this.capacityTextBox = new System.Windows.Forms.TextBox();
@@ -36,7 +36,7 @@
             this.capacitytrackBar = new System.Windows.Forms.TrackBar();
             this.capacityLabel = new System.Windows.Forms.Label();
             this.allowCreatorCheckBox = new System.Windows.Forms.CheckBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.creatorPanel = new System.Windows.Forms.Panel();
             this.planeTypeListBox = new System.Windows.Forms.ListBox();
             this.creatorPlaneTypesLabel = new System.Windows.Forms.Label();
             this.planeTypesTextBox = new System.Windows.Forms.TextBox();
@@ -47,7 +47,7 @@
             this.creatorFoundationYearTextBox = new System.Windows.Forms.TextBox();
             this.creatorNameTextBox = new System.Windows.Forms.TextBox();
             this.creatorCountryTextBox = new System.Windows.Forms.TextBox();
-            this.panelPassenger = new System.Windows.Forms.Panel();
+            this.passengerPanel = new System.Windows.Forms.Panel();
             this.airLineNameLabel = new System.Windows.Forms.Label();
             this.textBoxSeatsCount = new System.Windows.Forms.TextBox();
             this.textBoxAirlineName = new System.Windows.Forms.TextBox();
@@ -60,26 +60,26 @@
             this.numberTextBox = new System.Windows.Forms.TextBox();
             this.numberLabel = new System.Windows.Forms.Label();
             this.editButton = new System.Windows.Forms.Button();
-            this.capacityPanel.SuspendLayout();
+            this.militaryPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.capacitytrackBar)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panelPassenger.SuspendLayout();
+            this.creatorPanel.SuspendLayout();
+            this.passengerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seatsCountTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
-            // capacityPanel
+            // militaryPanel
             // 
-            this.capacityPanel.Controls.Add(this.crewMembersListBox);
-            this.capacityPanel.Controls.Add(this.crewMembersLabel);
-            this.capacityPanel.Controls.Add(this.capacityTextBox);
-            this.capacityPanel.Controls.Add(this.crewMembersTextBox);
-            this.capacityPanel.Controls.Add(this.capacitytrackBar);
-            this.capacityPanel.Controls.Add(this.capacityLabel);
-            this.capacityPanel.Location = new System.Drawing.Point(-4, 124);
-            this.capacityPanel.Name = "capacityPanel";
-            this.capacityPanel.Size = new System.Drawing.Size(353, 174);
-            this.capacityPanel.TabIndex = 40;
-            this.capacityPanel.Visible = false;
+            this.militaryPanel.Controls.Add(this.crewMembersListBox);
+            this.militaryPanel.Controls.Add(this.crewMembersLabel);
+            this.militaryPanel.Controls.Add(this.capacityTextBox);
+            this.militaryPanel.Controls.Add(this.crewMembersTextBox);
+            this.militaryPanel.Controls.Add(this.capacitytrackBar);
+            this.militaryPanel.Controls.Add(this.capacityLabel);
+            this.militaryPanel.Location = new System.Drawing.Point(-4, 124);
+            this.militaryPanel.Name = "militaryPanel";
+            this.militaryPanel.Size = new System.Drawing.Size(353, 174);
+            this.militaryPanel.TabIndex = 40;
+            this.militaryPanel.Visible = false;
             // 
             // crewMembersListBox
             // 
@@ -147,23 +147,23 @@
             this.allowCreatorCheckBox.UseVisualStyleBackColor = true;
             this.allowCreatorCheckBox.CheckedChanged += new System.EventHandler(this.allowCreatorCheckBox_CheckedChanged);
             // 
-            // panel1
+            // creatorPanel
             // 
-            this.panel1.Controls.Add(this.planeTypeListBox);
-            this.panel1.Controls.Add(this.creatorPlaneTypesLabel);
-            this.panel1.Controls.Add(this.planeTypesTextBox);
-            this.panel1.Controls.Add(this.creatorNameLabel);
-            this.panel1.Controls.Add(this.labelCreator);
-            this.panel1.Controls.Add(this.creatorCountryLabel);
-            this.panel1.Controls.Add(this.creatorYearLabel);
-            this.panel1.Controls.Add(this.creatorFoundationYearTextBox);
-            this.panel1.Controls.Add(this.creatorNameTextBox);
-            this.panel1.Controls.Add(this.creatorCountryTextBox);
-            this.panel1.Location = new System.Drawing.Point(364, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(348, 253);
-            this.panel1.TabIndex = 38;
-            this.panel1.Visible = false;
+            this.creatorPanel.Controls.Add(this.planeTypeListBox);
+            this.creatorPanel.Controls.Add(this.creatorPlaneTypesLabel);
+            this.creatorPanel.Controls.Add(this.planeTypesTextBox);
+            this.creatorPanel.Controls.Add(this.creatorNameLabel);
+            this.creatorPanel.Controls.Add(this.labelCreator);
+            this.creatorPanel.Controls.Add(this.creatorCountryLabel);
+            this.creatorPanel.Controls.Add(this.creatorYearLabel);
+            this.creatorPanel.Controls.Add(this.creatorFoundationYearTextBox);
+            this.creatorPanel.Controls.Add(this.creatorNameTextBox);
+            this.creatorPanel.Controls.Add(this.creatorCountryTextBox);
+            this.creatorPanel.Location = new System.Drawing.Point(364, 12);
+            this.creatorPanel.Name = "creatorPanel";
+            this.creatorPanel.Size = new System.Drawing.Size(348, 253);
+            this.creatorPanel.TabIndex = 38;
+            this.creatorPanel.Visible = false;
             // 
             // planeTypeListBox
             // 
@@ -254,18 +254,18 @@
             this.creatorCountryTextBox.Size = new System.Drawing.Size(200, 20);
             this.creatorCountryTextBox.TabIndex = 15;
             // 
-            // panelPassenger
+            // passengerPanel
             // 
-            this.panelPassenger.Controls.Add(this.airLineNameLabel);
-            this.panelPassenger.Controls.Add(this.textBoxSeatsCount);
-            this.panelPassenger.Controls.Add(this.textBoxAirlineName);
-            this.panelPassenger.Controls.Add(this.seatsCountTrackBar);
-            this.panelPassenger.Controls.Add(this.seatsCountLabel);
-            this.panelPassenger.Location = new System.Drawing.Point(-4, 124);
-            this.panelPassenger.Name = "panelPassenger";
-            this.panelPassenger.Size = new System.Drawing.Size(348, 130);
-            this.panelPassenger.TabIndex = 37;
-            this.panelPassenger.Visible = false;
+            this.passengerPanel.Controls.Add(this.airLineNameLabel);
+            this.passengerPanel.Controls.Add(this.textBoxSeatsCount);
+            this.passengerPanel.Controls.Add(this.textBoxAirlineName);
+            this.passengerPanel.Controls.Add(this.seatsCountTrackBar);
+            this.passengerPanel.Controls.Add(this.seatsCountLabel);
+            this.passengerPanel.Location = new System.Drawing.Point(-4, 124);
+            this.passengerPanel.Name = "passengerPanel";
+            this.passengerPanel.Size = new System.Drawing.Size(348, 130);
+            this.passengerPanel.TabIndex = 37;
+            this.passengerPanel.Visible = false;
             // 
             // airLineNameLabel
             // 
@@ -379,24 +379,24 @@
             this.ClientSize = new System.Drawing.Size(719, 356);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.allowCreatorCheckBox);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelPassenger);
+            this.Controls.Add(this.creatorPanel);
+            this.Controls.Add(this.passengerPanel);
             this.Controls.Add(this.releaseYearTextBox);
             this.Controls.Add(this.releaseYearLabel);
             this.Controls.Add(this.markTextBox);
             this.Controls.Add(this.markLabel);
             this.Controls.Add(this.numberTextBox);
             this.Controls.Add(this.numberLabel);
-            this.Controls.Add(this.capacityPanel);
+            this.Controls.Add(this.militaryPanel);
             this.Name = "EditForm";
             this.Text = "EditForm";
-            this.capacityPanel.ResumeLayout(false);
-            this.capacityPanel.PerformLayout();
+            this.militaryPanel.ResumeLayout(false);
+            this.militaryPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.capacitytrackBar)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panelPassenger.ResumeLayout(false);
-            this.panelPassenger.PerformLayout();
+            this.creatorPanel.ResumeLayout(false);
+            this.creatorPanel.PerformLayout();
+            this.passengerPanel.ResumeLayout(false);
+            this.passengerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seatsCountTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -405,7 +405,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel capacityPanel;
+        private System.Windows.Forms.Panel militaryPanel;
         private System.Windows.Forms.ListBox crewMembersListBox;
         private System.Windows.Forms.Label crewMembersLabel;
         private System.Windows.Forms.TextBox capacityTextBox;
@@ -413,7 +413,7 @@
         private System.Windows.Forms.TrackBar capacitytrackBar;
         private System.Windows.Forms.Label capacityLabel;
         private System.Windows.Forms.CheckBox allowCreatorCheckBox;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel creatorPanel;
         private System.Windows.Forms.ListBox planeTypeListBox;
         private System.Windows.Forms.Label creatorPlaneTypesLabel;
         private System.Windows.Forms.TextBox planeTypesTextBox;
@@ -424,7 +424,7 @@
         private System.Windows.Forms.TextBox creatorFoundationYearTextBox;
         private System.Windows.Forms.TextBox creatorNameTextBox;
         private System.Windows.Forms.TextBox creatorCountryTextBox;
-        private System.Windows.Forms.Panel panelPassenger;
+        private System.Windows.Forms.Panel passengerPanel;
         private System.Windows.Forms.Label airLineNameLabel;
         private System.Windows.Forms.TextBox textBoxSeatsCount;
         private System.Windows.Forms.TextBox textBoxAirlineName;

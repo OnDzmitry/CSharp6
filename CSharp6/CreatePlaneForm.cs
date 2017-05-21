@@ -36,25 +36,25 @@ namespace CSharp6
        
         private void radioButtonPassengerPlane_CheckedChanged(object sender, EventArgs e)
         {
-            panelPassenger.Visible = true;
-            panel2.Visible = false;
+            passengerPanel.Visible = true;
+            militaryPanel.Visible = false;
         }
 
         private void radioButtonMilitaryPlane_CheckedChanged(object sender, EventArgs e)
         {
-            panelPassenger.Visible = false;
-            panel2.Visible = true;
+            passengerPanel.Visible = false;
+            militaryPanel.Visible = true;
         }
 
         private void checkBoxAllowCreator_CheckedChanged(object sender, EventArgs e)
         {
             if ( allowCreatorCheckBox.Checked == true )
             {
-                panel1.Visible = true;
+                creatorPanel.Visible = true;
             }
             else
             {
-                panel1.Visible = false;
+                creatorPanel.Visible = false;
             }
         }
         private void onlyDigitsPress (object sender, KeyPressEventArgs e)

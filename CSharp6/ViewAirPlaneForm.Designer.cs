@@ -32,6 +32,10 @@
             this.labelMark = new System.Windows.Forms.Label();
             this.labelNumber = new System.Windows.Forms.Label();
             this.panelCreator = new System.Windows.Forms.Panel();
+            this.creatorYearLabel = new System.Windows.Forms.Label();
+            this.creatorCountryLabel = new System.Windows.Forms.Label();
+            this.creatorNameLabel = new System.Windows.Forms.Label();
+            this.planeTypeListBox = new System.Windows.Forms.ListBox();
             this.planeTypesLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelCreator = new System.Windows.Forms.Label();
@@ -41,21 +45,17 @@
             this.labelAirLineName = new System.Windows.Forms.Label();
             this.labelSeatsCount = new System.Windows.Forms.Label();
             this.panelPassenger = new System.Windows.Forms.Panel();
+            this.planeSeatsCountlabel = new System.Windows.Forms.Label();
+            this.planeAirLinelabel = new System.Windows.Forms.Label();
             this.labelCrewMembers = new System.Windows.Forms.Label();
             this.capacityLabel = new System.Windows.Forms.Label();
             this.panelMilitary = new System.Windows.Forms.Panel();
-            this.planeTypeListBox = new System.Windows.Forms.ListBox();
+            this.capacityPlaneLabel = new System.Windows.Forms.Label();
             this.crewMembersListBox = new System.Windows.Forms.ListBox();
             this.labelType = new System.Windows.Forms.Label();
             this.numberLabel = new System.Windows.Forms.Label();
             this.markLabel = new System.Windows.Forms.Label();
             this.releaseYearLabel = new System.Windows.Forms.Label();
-            this.capacityPlaneLabel = new System.Windows.Forms.Label();
-            this.planeAirLinelabel = new System.Windows.Forms.Label();
-            this.planeSeatsCountlabel = new System.Windows.Forms.Label();
-            this.creatorNameLabel = new System.Windows.Forms.Label();
-            this.creatorCountryLabel = new System.Windows.Forms.Label();
-            this.creatorYearLabel = new System.Windows.Forms.Label();
             this.panelCreator.SuspendLayout();
             this.panelPassenger.SuspendLayout();
             this.panelMilitary.SuspendLayout();
@@ -107,6 +107,45 @@
             this.panelCreator.Size = new System.Drawing.Size(348, 253);
             this.panelCreator.TabIndex = 27;
             this.panelCreator.Visible = false;
+            // 
+            // creatorYearLabel
+            // 
+            this.creatorYearLabel.AutoSize = true;
+            this.creatorYearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.creatorYearLabel.Location = new System.Drawing.Point(130, 87);
+            this.creatorYearLabel.Name = "creatorYearLabel";
+            this.creatorYearLabel.Size = new System.Drawing.Size(36, 17);
+            this.creatorYearLabel.TabIndex = 42;
+            this.creatorYearLabel.Text = "year";
+            // 
+            // creatorCountryLabel
+            // 
+            this.creatorCountryLabel.AutoSize = true;
+            this.creatorCountryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.creatorCountryLabel.Location = new System.Drawing.Point(128, 60);
+            this.creatorCountryLabel.Name = "creatorCountryLabel";
+            this.creatorCountryLabel.Size = new System.Drawing.Size(55, 17);
+            this.creatorCountryLabel.TabIndex = 41;
+            this.creatorCountryLabel.Text = "country";
+            // 
+            // creatorNameLabel
+            // 
+            this.creatorNameLabel.AutoSize = true;
+            this.creatorNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.creatorNameLabel.Location = new System.Drawing.Point(128, 34);
+            this.creatorNameLabel.Name = "creatorNameLabel";
+            this.creatorNameLabel.Size = new System.Drawing.Size(43, 17);
+            this.creatorNameLabel.TabIndex = 40;
+            this.creatorNameLabel.Text = "name";
+            // 
+            // planeTypeListBox
+            // 
+            this.planeTypeListBox.FormattingEnabled = true;
+            this.planeTypeListBox.Location = new System.Drawing.Point(131, 118);
+            this.planeTypeListBox.Name = "planeTypeListBox";
+            this.planeTypeListBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.planeTypeListBox.Size = new System.Drawing.Size(200, 56);
+            this.planeTypeListBox.TabIndex = 27;
             // 
             // planeTypesLabel
             // 
@@ -200,6 +239,26 @@
             this.panelPassenger.TabIndex = 31;
             this.panelPassenger.Visible = false;
             // 
+            // planeSeatsCountlabel
+            // 
+            this.planeSeatsCountlabel.AutoSize = true;
+            this.planeSeatsCountlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.planeSeatsCountlabel.Location = new System.Drawing.Point(113, 41);
+            this.planeSeatsCountlabel.Name = "planeSeatsCountlabel";
+            this.planeSeatsCountlabel.Size = new System.Drawing.Size(43, 17);
+            this.planeSeatsCountlabel.TabIndex = 43;
+            this.planeSeatsCountlabel.Text = "count";
+            // 
+            // planeAirLinelabel
+            // 
+            this.planeAirLinelabel.AutoSize = true;
+            this.planeAirLinelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.planeAirLinelabel.Location = new System.Drawing.Point(113, 11);
+            this.planeAirLinelabel.Name = "planeAirLinelabel";
+            this.planeAirLinelabel.Size = new System.Drawing.Size(43, 17);
+            this.planeAirLinelabel.TabIndex = 42;
+            this.planeAirLinelabel.Text = "name";
+            // 
             // labelCrewMembers
             // 
             this.labelCrewMembers.AutoSize = true;
@@ -232,14 +291,15 @@
             this.panelMilitary.TabIndex = 37;
             this.panelMilitary.Visible = false;
             // 
-            // planeTypeListBox
+            // capacityPlaneLabel
             // 
-            this.planeTypeListBox.FormattingEnabled = true;
-            this.planeTypeListBox.Location = new System.Drawing.Point(131, 118);
-            this.planeTypeListBox.Name = "planeTypeListBox";
-            this.planeTypeListBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.planeTypeListBox.Size = new System.Drawing.Size(200, 56);
-            this.planeTypeListBox.TabIndex = 27;
+            this.capacityPlaneLabel.AutoSize = true;
+            this.capacityPlaneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.capacityPlaneLabel.Location = new System.Drawing.Point(124, 86);
+            this.capacityPlaneLabel.Name = "capacityPlaneLabel";
+            this.capacityPlaneLabel.Size = new System.Drawing.Size(60, 17);
+            this.capacityPlaneLabel.TabIndex = 42;
+            this.capacityPlaneLabel.Text = "capacity";
             // 
             // crewMembersListBox
             // 
@@ -290,72 +350,11 @@
             this.releaseYearLabel.TabIndex = 41;
             this.releaseYearLabel.Text = "year";
             // 
-            // capacityPlaneLabel
-            // 
-            this.capacityPlaneLabel.AutoSize = true;
-            this.capacityPlaneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.capacityPlaneLabel.Location = new System.Drawing.Point(124, 86);
-            this.capacityPlaneLabel.Name = "capacityPlaneLabel";
-            this.capacityPlaneLabel.Size = new System.Drawing.Size(60, 17);
-            this.capacityPlaneLabel.TabIndex = 42;
-            this.capacityPlaneLabel.Text = "capacity";
-            // 
-            // planeAirLinelabel
-            // 
-            this.planeAirLinelabel.AutoSize = true;
-            this.planeAirLinelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.planeAirLinelabel.Location = new System.Drawing.Point(113, 11);
-            this.planeAirLinelabel.Name = "planeAirLinelabel";
-            this.planeAirLinelabel.Size = new System.Drawing.Size(43, 17);
-            this.planeAirLinelabel.TabIndex = 42;
-            this.planeAirLinelabel.Text = "name";
-            // 
-            // planeSeatsCountlabel
-            // 
-            this.planeSeatsCountlabel.AutoSize = true;
-            this.planeSeatsCountlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.planeSeatsCountlabel.Location = new System.Drawing.Point(113, 41);
-            this.planeSeatsCountlabel.Name = "planeSeatsCountlabel";
-            this.planeSeatsCountlabel.Size = new System.Drawing.Size(43, 17);
-            this.planeSeatsCountlabel.TabIndex = 43;
-            this.planeSeatsCountlabel.Text = "count";
-            // 
-            // creatorNameLabel
-            // 
-            this.creatorNameLabel.AutoSize = true;
-            this.creatorNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.creatorNameLabel.Location = new System.Drawing.Point(128, 34);
-            this.creatorNameLabel.Name = "creatorNameLabel";
-            this.creatorNameLabel.Size = new System.Drawing.Size(43, 17);
-            this.creatorNameLabel.TabIndex = 40;
-            this.creatorNameLabel.Text = "name";
-            // 
-            // creatorCountryLabel
-            // 
-            this.creatorCountryLabel.AutoSize = true;
-            this.creatorCountryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.creatorCountryLabel.Location = new System.Drawing.Point(128, 60);
-            this.creatorCountryLabel.Name = "creatorCountryLabel";
-            this.creatorCountryLabel.Size = new System.Drawing.Size(55, 17);
-            this.creatorCountryLabel.TabIndex = 41;
-            this.creatorCountryLabel.Text = "country";
-            // 
-            // creatorYearLabel
-            // 
-            this.creatorYearLabel.AutoSize = true;
-            this.creatorYearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.creatorYearLabel.Location = new System.Drawing.Point(130, 87);
-            this.creatorYearLabel.Name = "creatorYearLabel";
-            this.creatorYearLabel.Size = new System.Drawing.Size(36, 17);
-            this.creatorYearLabel.TabIndex = 42;
-            this.creatorYearLabel.Text = "year";
-            // 
             // ViewAirPlaneForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(708, 381);
-            this.Controls.Add(this.panelMilitary);
             this.Controls.Add(this.releaseYearLabel);
             this.Controls.Add(this.markLabel);
             this.Controls.Add(this.numberLabel);
@@ -366,6 +365,7 @@
             this.Controls.Add(this.labelReleaseYear);
             this.Controls.Add(this.labelMark);
             this.Controls.Add(this.labelNumber);
+            this.Controls.Add(this.panelMilitary);
             this.Name = "ViewAirPlaneForm";
             this.Text = "ViewAirPlaneForm";
             this.panelCreator.ResumeLayout(false);
